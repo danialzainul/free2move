@@ -1,3 +1,4 @@
+@import 'assets/scss/_variables.scss';
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -35,5 +36,21 @@ $home-feets-theme: mat-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* ======== CSS Resets ======== */
+html, body { height: 100%; margin: 0; padding: 0; }
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* { box-sizing: border-box; }
+
+ul, ol { margin: 0 0 1rem; padding: 0 0 0 1rem; }
+ul { padding-inline-start: 20px !important; }
+
+table { width: 100%; border-collapse: collapse; }
+th {
+  text-align: left;
+
+  .mat-sort-header-sorted {
+    color: $darkGrey;
+  }
+}
+td { vertical-align: middle; color: grey }
