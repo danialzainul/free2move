@@ -13,8 +13,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$home-feets-primary: mat-palette($mat-indigo);
-$home-feets-accent: mat-palette($mat-pink, A200, A100, A400);
+$home-feets-primary: mat-palette($mat-pink);
+$home-feets-accent: mat-palette($mat-indigo, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $home-feets-warn: mat-palette($mat-red);
@@ -54,3 +54,15 @@ th {
   }
 }
 td { vertical-align: middle; color: grey }
+
+/* ======== General styles ======== */
+.container { padding: 2rem; }
+.cursor-pointer { cursor: pointer; }
+
+
+/* ======== Flexbox ======== */
+.d-flex { display: flex !important; }
+.align-items-center { align-items: center !important; }
+.justify-content-center { justify-content: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+

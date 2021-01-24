@@ -1,8 +1,24 @@
 @import 'src/styles';
 
-.profile-picture {
-  border: 1px solid $lightGrey;
-  border-radius: 50px;
-  height: 40px;
-  width: 40px;
+.table {
+
+  &__filter {
+    min-height: 64px;
+    padding: 8px 24px 0;
+
+    .mat-form-field {
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+
+  &__data {
+    .profile-picture {
+      border: 1px solid $lightGrey;
+      border-radius: 50px;
+      height: 40px;
+      width: 40px;
+      margin-right: 12px;
+    }
+  }
 }
