@@ -2,6 +2,10 @@
 
 .table {
 
+  td {
+    padding-top: 0.5rem;
+  }
+
   &__filter {
     min-height: 64px;
     padding: 8px 24px 0;

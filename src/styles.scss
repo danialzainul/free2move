@@ -42,8 +42,8 @@ body { font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 * { box-sizing: border-box; }
 
-ul, ol { margin: 0 0 1rem; padding: 0 0 0 1rem; }
-ul { padding-inline-start: 20px !important; }
+ul, ol { margin: 0 0 0.5rem; padding: 0 0 0 1rem; }
+ul { padding-inline-start: 10px !important; }
 
 table { width: 100%; border-collapse: collapse; }
 th {
@@ -53,12 +53,15 @@ th {
     color: $darkGrey;
   }
 }
-td { vertical-align: middle; color: grey }
+td { vertical-align: middle; color: grey; }
 
 /* ======== General styles ======== */
 .container { padding: 2rem; }
 .cursor-pointer { cursor: pointer; }
+.icon-size { font-size: 1.5rem; }
+.mr-3 { margin-right: 1rem; }
 
+.font-sm { font-size: 0.9rem; }
 
 /* ======== Flexbox ======== */
 .d-flex { display: flex !important; }

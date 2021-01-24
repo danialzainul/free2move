@@ -1,0 +1,18 @@
+@import 'src/styles';
+
+.header-spacing {
+  flex: 1 1 auto;
+}
+
+.header {
+
+  &__hamburger {
+    width: auto;
+    padding: 0 14px;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+}

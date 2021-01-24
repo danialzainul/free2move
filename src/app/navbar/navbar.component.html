@@ -1,0 +1,18 @@
+<mat-toolbar class="header" color="primary">
+  <button mat-icon-button class="header__hamburger" aria-label="hamburger icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>Users list</span>
+  <span class="header-spacing"></span>
+
+  <button class="header__user" mat-button [matMenuTriggerFor]="userMenu">
+    <i class="fas fa-user-circle icon-size mr-3"></i>
+    <span class="font-sm">{{currentUser.name}}</span>
+  </button>
+
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item>Options</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+</mat-toolbar>
