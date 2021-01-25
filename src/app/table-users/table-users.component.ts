@@ -23,7 +23,7 @@ const usersData: UsersDataDetails[] = USER_DATA;
 })
 
 export class TableUsersComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['name', 'username', 'email', 'register_date', 'last_login', 'location'];
+  displayedColumns: string[] = ['user', 'username', 'register_date', 'last_login', 'location'];
   // Assign the data to the data source for the table to render
   dataSource = new MatTableDataSource(usersData);
 
@@ -45,14 +45,15 @@ export class TableUsersComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  applyFilter(filterValue: string): void {
+  applyFilter(eventTarget: any): void {
+    let filterValue = eventTarget.value;
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
 
-  test(row: any): any {
-    console.log('row', row);
+  viewUserDetails(userData: any): any {
+    // redirect to user page, and GET user by id
   }
 
 }

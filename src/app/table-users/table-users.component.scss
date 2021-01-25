@@ -2,6 +2,10 @@
 
 .table {
 
+  tr.mat-row:hover {
+    background-color: $lightGrey;
+  }
+
   td {
     padding-top: 0.5rem;
   }
@@ -26,3 +30,4 @@
     }
   }
 }
+

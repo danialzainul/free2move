@@ -1,15 +1,15 @@
 <div class="table">
   <div class="table__filter">
     <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      <input matInput (keyup)="applyFilter($event.target)" placeholder="Filter">
     </mat-form-field>
   </div>
 
   <div class="table__data mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
       <!-- Name Column -->
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> User </th>
         <td mat-cell *matCellDef="let user">
           <div class="d-flex">
             <img src="{{user.profile_picture}}" alt="profile_picture" class="profile-picture">
@@ -27,25 +27,20 @@
         <td mat-cell *matCellDef="let user"> {{user.username}} </td>
       </ng-container>
 
-      <!-- Email Column -->
-      <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-        <td mat-cell *matCellDef="let user"> {{user.email}} </td>
-      </ng-container>
-
       <!-- Register Date Column -->
       <ng-container matColumnDef="register_date">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Register Date </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Registered </th>
         <td mat-cell *matCellDef="let user"> {{user.register_date}} </td>
       </ng-container>
 
       <!-- IP Address and Last Login Column -->
       <ng-container matColumnDef="last_login">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Login <br> & IP Address </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="pl-4"> Login History </th>
         <td mat-cell *matCellDef="let user">
           <ng-container *ngFor="let ll of user.last_login[0]">
+            <!--<div class="bullet">Logged in {{ll.login_datetime | date}} <br> from IP {{ll.ip_address}}</div>-->
             <ul>
-              <li>{{ll.login_datetime | date}} <br> {{ll.ip_address}} </li>
+              <li>Logged in {{ll.login_datetime | date}} <br> from IP {{ll.ip_address}} </li>
             </ul>
           </ng-container>
         </td>
@@ -53,7 +48,7 @@
 
       <!-- Location Column -->
       <ng-container matColumnDef="location">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Location </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="pl-4"> Location </th>
         <td mat-cell *matCellDef="let user">
           <ng-container *ngFor="let loc of user.location">
             <ul *ngIf="loc.latitude">
@@ -64,7 +59,7 @@
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="test(row)"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="viewUserDetails(row)"></tr>
     </table>
 
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
